@@ -1,0 +1,20 @@
+add_compile_options(-w)
+
+if(NOT BUILD_STATIC_LIB)
+    # When building shared libraries, ensure position independent code
+    set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+endif()
+
+add_subdirectory(libfort)
+add_subdirectory(fft)
+add_subdirectory(flute3)
+add_subdirectory(pybind11)
+add_subdirectory(abseil-cpp)
+add_subdirectory(lefdef)
+add_subdirectory(salt)
+add_subdirectory(lemon)
+add_subdirectory(yaml-cpp)
+# add_subdirectory(mt-kahypar)
+if(BUILD_GUI)
+add_subdirectory(tcl_qt)
+endif()
